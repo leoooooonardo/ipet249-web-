@@ -1,0 +1,98 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@theme inline {
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+:root {
+  color-scheme: light;
+  /* Paleta institucional IPET 249 - Tema claro */
+  --bg-white: #FFFFFF;            /* Blanco puro - fondo principal */
+  --bg-light: #F9F7F4;            /* Beige muy claro - fondos secundarios */
+  --gold-primary: #D4A72C;        /* Dorado - acentos principales */
+  --gold-light: #E8C65F;          /* Dorado claro - highlights */
+  --red-oxide: #A13A2E;           /* Rojo óxido - acentos, botones */
+  --red-bright: #C04F40;          /* Rojo más brillante - hover */
+  --text-primary: #1A1A1A;        /* Negro - texto principal */
+  --text-secondary: #5C5C5C;      /* Gris oscuro - texto secundario */
+  --text-muted: #9A9A9A;          /* Gris medio - texto muy secundario */
+  --border-color: #E0D8D0;        /* Bordes sutiles */
+  --surface-light: #FAFAF8;       /* Superficie clara */
+  
+  /* Aliases para compatibilidad */
+  --primary: #D4A72C;
+  --accent: #A13A2E;
+  --background: #FFFFFF;
+  --surface: #FAFAF8;
+  --surface-alt: #F9F7F4;
+  --foreground: #1A1A1A;
+  --foreground-secondary: #5C5C5C;
+  --border: #E0D8D0;
+  --muted: #9A9A9A;
+  --black-primary: #1A1A1A;
+  --white-off: #FAFAF8;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: var(--font-body), system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+    font-weight: 700;
+  }
+  a {
+    color: var(--gold-primary);
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+  }
+  a:hover {
+    color: var(--gold-light);
+  }
+}
+
+@layer components {
+  .section-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-left: 4rem;
+      padding-right: 4rem;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  }
+  
+  .container-max {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
